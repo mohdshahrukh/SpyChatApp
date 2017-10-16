@@ -14,7 +14,7 @@ else:
     spy_name = raw_input('what is your name? ')
 
     if len(spy_name)>0:
-        print 'welcome '+ spy_name +' nice to meet you'
+        print 'Hi,welcome '+ spy_name +' nice to meet you'
         spy_salutation =raw_input('what should we call you (mr. or ms.)?')
         spy_name = spy_salutation + ' ' + spy_name
         print 'Alright ' + spy_name + ' i\'d like to know more about you'
