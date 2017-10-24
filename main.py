@@ -1,7 +1,13 @@
 from spy_details import spy_age, spy_name, spy_rating
 
-
-
+def start_chat(spy_name,spy_age, spy_rating):
+    menu_choice = input("What do you want to do? \n 1. Add a status update \n 2. add a friend\n 3. Send message\n 4. exit")
+    if menu_choice == 1:
+       print  "gygygv"
+    elif menu_choice==2:
+       print "gfchtc"
+    else:
+       print "vgvv"
 
 print 'Hello'
 print 'let\'s get started'
@@ -10,6 +16,8 @@ spy_ques =raw_input('are you existing user? Y/N ')
 
 if spy_ques == 'Y'or spy_ques== 'y':
     print spy_name
+    start_chat(spy_name,spy_age,spy_rating)
+
 else:
     spy_name = raw_input('what is your name? ')
 
@@ -30,9 +38,8 @@ else:
             else:
                 print 'bad spy'
             print 'authentication complete. welcome ' + spy_name + ' age: ' + str(spy_age) + ' and rating : ' + str(spy_rating) + " Proud to have you onboard"
-
+            start_chat(spy_name,spy_age,spy_rating)
         else:
             print 'youre age is not eligible to be a spy'
-
     else:
         print 'please enter your name'
