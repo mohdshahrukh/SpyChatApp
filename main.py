@@ -1,13 +1,43 @@
 from spy_details import spy_age, spy_name, spy_rating
 
+STATUS_MESSAGE = ["hey there i am using spychat ","can't talk spychat only","available"]
+
+
 def start_chat(spy_name,spy_age, spy_rating):
-    menu_choice = input("What do you want to do? \n 1. Add a status update \n 2. add a friend\n 3. Send message\n 4. exit")
-    if menu_choice == 1:
-       print  "gygygv"
-    elif menu_choice==2:
-       print "gfchtc"
+    current_status_message = None
+    show_menu = True
+    while show_menu:
+        menu_choice = input("What do you want to do? \n 1. Add a status update \n 2. add a friend\n 3. Send message\n 4. exit")
+        if menu_choice == 1:
+           print  "Time to update your status"
+           add_status(current_status_message)
+        elif menu_choice==2:
+           print "gfchtc"
+        elif menu_choice == 4:
+           show_menu = False
+        else:
+            print "enter right menu option"
+
+def add_status (current_status_message):
+    if current_status_message != None:
+      print "Your current status message is " + current_status_message + "\n"
     else:
-       print "vgvv"
+      print 'You don\'t have any status message currently \n'
+
+    query = raw_input ("do you want to select from the older status (y/n)? ")
+
+    if query=="y" or query=="Y":
+        print "your old statuses are "
+    elif query =="n" or query =="N":
+        new_status = raw_input("please enter your new status ")
+        if len(new_status)>0 :
+            STATUS_MESSAGE.append(new_status)
+            print "your updated status is "+ new_status
+        else:
+            print"kindly enter something"
+
+
+
 
 print 'Hello'
 print 'let\'s get started'
