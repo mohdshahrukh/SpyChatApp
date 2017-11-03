@@ -30,30 +30,31 @@ def add_status (current_status_message):
 
     query = raw_input ("do you want to select from the older status (y/n)? ")
 
-    if query=="y" or query=="Y":
-        print "your old statuses are "
-        serial_number = 1
-        for old_status in STATUS_MESSAGE:
-            print str(serial_number) +". "+ old_status
-            serial_number+=1
 
-        user_status_selection = input("select the no of status you want to set " )
+    if query=="y"or query=="Y":
+        print "select from your old status"
+        number=1
+        for new_status in STATUS_MESSAGE:
+            print str(number) + ". " + new_status
+            number+=1
 
-        if len(STATUS_MESSAGE)>= user_status_selection:
-            new_user_status_selection = user_status_selection -1
-            current_status = STATUS_MESSAGE[new_user_status_selection]
-            print "your current status is " + current_status
-
+        user_selection= input ("choose any no")
+        if len (STATUS_MESSAGE)>=user_selection:
+            new_user_selection=user_selection-1
+            current_status=STATUS_MESSAGE[new_user_selection]
+            print current_status + " " + "is our current status"
         else:
-            print "Your selection is not valid"
-
-    elif query =="n" or query =="N":
-        new_status = raw_input("please enter your new status ")
-        if len(new_status)>0 :
+            print "your entry is invalid"
+    elif query=="n" or query =="N":
+        new_status=raw_input("please enter the new status ")
+        if len (new_status)>0:
             STATUS_MESSAGE.append(new_status)
-            print "your updated status is "+ new_status
+            print new_status + " " +"is our current status"
+
         else:
-            print "kindly enter something"
+            print "please enter something"
+    else:
+        print " please enter y or n"
 
 def add_friend():
     new_name = raw_input("Please add your friend's name:")
@@ -61,7 +62,7 @@ def add_friend():
     new_name = new_salutation + " " + new_name
     new_age = input("Age?")
     new_rating = input("Spy rating?")
-    if new_name>0 and 12< new_age<50 and new_rating>=spy_rating:
+    if len(new_name)>0 and 12< new_age<50 and new_rating>=spy_rating:
         friends_name.append(new_name)
         friends_age.append(new_age)
         friends_rating.append(new_rating)
